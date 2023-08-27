@@ -14,9 +14,11 @@ sudo yum install java-1.8.0-openjdk
 java -version 
 sudo yum remove java-1.8.0-openjdk -y
 
-java 11 
+sudo yum install java 			(current version 17) 
 
-sudo amazon-linux-extras install java-openjdk11
+To install java 11 
+
+sudo yum install java-11
 
 sudo alternatives --config java		: This command is switch from one version to another version 
 
