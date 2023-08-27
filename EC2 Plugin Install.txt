@@ -128,18 +128,10 @@ sudo service docker start
 
 sudo docker info
 
-sudo usermod enable --now docker 
-
-	sudo usermod -a -G docker ec2-user 
-	sudo usermod -aG docker ec2-user 
-	
-	sudo usermod -a -G docker jenkins 
-	sudo usermod -aG docker jenkins
-
 docker info 
 docker -v
 
-install docker compose 
+--------------------install docker compose 
 
 Download the current stable release of Docker Compose
 
@@ -149,14 +141,29 @@ Apply executable permissions to the binary
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-
-sudo reboot 
-
 Verify it’s installed
 
 docker-compose version
 
 
+-----if you want to docker and docker-compose in jenkin then please execute those command ---------------------
+
+sudo usermod -a -G docker jenkins 
+
+sudo usermod -a -G docker ec2-user 
+
+sudo chmod 777 /var/run/docker.sock
+
+sudo service jenkins restart
+
+-------------------------------------
+
+sudo reboot 
+
+----------------------
+
+ps | grep java-fullstack | awk '{print $1}' | xargs kill -9 || true
+env SERVER.PORT=8081 nohup java -jar ./target/java-fullstack-1.0-SNAPSHOT.jar &
 
 
 
